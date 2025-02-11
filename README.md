@@ -13,6 +13,25 @@ By completing this activity, students will:
 4. **Work with Docker Containers:** Understand how to use Docker to run and manage Hadoop components and transfer files between the host and container environments.
 5. **Analyze MapReduce Job Outputs:** Learn how to retrieve and interpret the results of a MapReduce job.
 
+
+### Project Overview – A brief explanation of what the project does.
+
+This is word count problem. By the end frequency of each word in the text file is counted and a new output text file is created with the frequency output.
+
+### Approach and Implementation – Explanation of the Mapper and Reducer logic.
+
+Mapper -> Extends mapper class and the code logic is: 
+1) hadoop string datatype(Text) is converted to java string
+2) For each word in the line the mapper outputs <word,1>
+as key,value pair.
+
+Reduce -> Extends reduce class and input is from sort,merge function. Input is again key,value pair with key being unique word and value is list of 1s. The number of 1s in the list is the frequency of the word.
+
+1) All the 1s from the list are added.
+2) Word, count is written as output
+
+Execution Steps – Include the commands used to build and run your project.
+
 ## Setup and Execution
 
 ### 1. **Start the Hadoop Cluster**
@@ -116,3 +135,69 @@ To copy the output from HDFS to your local machine:
     docker cp resourcemanager:/opt/hadoop-3.2.1/share/hadoop/mapreduce/output/ shared-folder/output/
     ```
 3. Commit and push to your repo so that we can able to see your output
+
+### Challenges Faced & Solutions – Mention any difficulties encountered and how they were resolved.
+
+Everything was seamless due to github codespaces. 
+
+### Sample Input and Output – Provide a test case example and its expected output.
+
+### Input:
+Hadoop is a framework that allows for the distributed processing of large data sets across clusters of computers.
+Hadoop is designed to scale up from single servers to thousands of machines, each offering local computation and storage.
+Rather than rely on hardware to deliver high-availability, the library itself is designed to detect and handle failures at the application layer.
+MapReduce is a core component of the Hadoop ecosystems.
+
+### Output:
+
+Hadoop  3
+MapReduce       1
+Rather  1
+a       2
+across  1
+allows  1
+and     2
+application     1
+at      1
+clusters        1
+component       1
+computation     1
+computers.      1
+core    1
+data    1
+deliver 1
+designed        2
+detect  1
+distributed     1
+each    1
+ecosystems.     1
+failures        1
+for     1
+framework       1
+from    1
+handle  1
+hardware        1
+high-availability,      1
+is      4
+itself  1
+large   1
+layer.  1
+library 1
+local   1
+machines,       1
+of      4
+offering        1
+on      1
+processing      1
+rely    1
+scale   1
+servers 1
+sets    1
+single  1
+storage.        1
+than    1
+that    1
+the     4
+thousands       1
+to      4
+up      1
